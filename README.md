@@ -25,3 +25,13 @@ Some things you can do:
 * Automatically add intro and outro slides
 * Connect shaders and images with graph language
 
+## Development
+
+Setup prerequisites: https://tauri.app/start/prerequisites/
+
+Build and run:
+    npx tauri dev
+
+On my system I sometimes have to right-click in the app and do a "reload" if the
+app starts before the dev server is ready. First compile may take a bit.
+
