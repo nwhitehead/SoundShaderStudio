@@ -10,6 +10,7 @@
             <button type="submit" class="btn btn-primary join-item">Greet</button>
         </form>
         <p>{{ greetMsg }}</p>
+        <div ref="editor" class="editor"></div>
     </main>
 </template>
 
@@ -21,6 +22,10 @@
     background-color: #f6f6f6;
 }
 
+.editor {
+    width: 100vw;
+    height: 100vh;
+}
 @media (prefers-color-scheme: dark) {
     :root {
         color: #f6f6f6;
@@ -33,14 +38,20 @@
 
 <script setup lang="ts">
 
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { invoke } from '@tauri-apps/api/core';
+import { createEditor } from './editor';
 
 const greetMsg = ref('');
 const name = ref('');
+const editor = ref(null);
 
 async function greet() {
     greetMsg.value = await invoke('greet', { name: name.value });
 }
+
+onMounted(() => {
+    createEditor(editor.value);
+});
 
 </script>
