@@ -1,11 +1,11 @@
 
 <template>
 
-    <main class="container">
+    <main class="py-8 flex flex-col gap-4 items-center">
 
         <h1 class="text-3xl font-bold underline">Hello world TailwindCSS3!</h1>
 
-        <form class="row" @submit.prevent="greet">
+        <form class="flex flex-row" @submit.prevent="greet">
             <input id="greet-input" v-model="name" placeholder="Enter name..." />
             <button type="submit">Greet</button>
         </form>
@@ -17,47 +17,8 @@
 <style>
 
 :root {
-    font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 400;
-
     color: #0f0f0f;
     background-color: #f6f6f6;
-
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
-}
-
-.container {
-    margin: 0;
-    padding-top: 10vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-}
-
-.row {
-    display: flex;
-    justify-content: center;
-}
-
-a {
-    font-weight: 500;
-    color: #646cff;
-    text-decoration: inherit;
-}
-
-a:hover {
-    color: #535bf2;
-}
-
-h1 {
-    text-align: center;
 }
 
 input,
